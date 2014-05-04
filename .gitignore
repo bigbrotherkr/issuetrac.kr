@@ -1,0 +1,12 @@
+issuetrackr/.DS_Store
+issuetrackr/.nodemonignore
+issuetrackr/.sass-cache/
+issuetrackr/.bower-*/
+issuetrackr/.idea/
+issuetrackr/node_modules/
+issuetrackr/public/system/lib
+issuetrackr/mean.iml
+issuetrackr/test/coverage/
+issuetrackr/modules/public/
+issuetrackr/modules/views/
+/public/build/
