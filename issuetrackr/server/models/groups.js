@@ -6,7 +6,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var groupsSchema = new Schema({
+var GroupsSchema = new Schema({
 	article: [{
 		title: { 
 			type: String,
@@ -29,3 +29,5 @@ var groupsSchema = new Schema({
     }
 	}]
 });
+
+mongoose.model('Groups', GroupsSchema);

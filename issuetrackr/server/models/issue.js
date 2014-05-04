@@ -11,17 +11,21 @@ var mongoose = require('mongoose'),
  * Article Schema
  */
 var IssueSchema = new Schema({
-	tag:{type:[String],
+	tag:{
+		type:[String],
 		required: true
 		},
-	title:{type: String,
+	title:{
+		type: String,
 		required: true
 		trim: true
 		},
-    start:{type: Date,
+    start:{
+		type: Date,
 		default: Date.now
 		},
-    Groups: {type:[{
+    Groups: {
+		type:[{
 		type:Schema.ObjectId,
 		ref:"Groups"}],
 			default:[]
@@ -49,20 +53,4 @@ var IssueSchema = new Schema({
 		},
 });
 
-/**
- * Validations
- */
-ArticleSchema.path('title').validate(function(title) {
-    return title.length;
-}, 'Title cannot be blank');
-
-/**
- * Statics
- */
-ArticleSchema.statics.load = function(id, cb) {
-    this.findOne({
-        _id: id
-    }).populate('user', 'name username').exec(cb);
-};
-
-mongoose.model('Article', ArticleSchema);
+mongoose.model('Issue', IssueSchema);
