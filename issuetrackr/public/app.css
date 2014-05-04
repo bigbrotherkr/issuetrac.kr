@@ -1,0 +1,29 @@
+/* page 1 */
+div#title p.text-center{
+	color:white; font-size: 10em; font-variant:small-caps; 
+	
+	/* for setting title position */
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 1em;
+}
+body{
+	background-color:darkslateblue;
+}
+.menu{
+	color:white;
+}
+#title{
+	/* for setting title position */
+	position:fixed; top:0; bottom:0; left: 0; right: 0;
+}
+
+/* page 2 */
+
+/* page 3 */
+
+/* page 4 */
