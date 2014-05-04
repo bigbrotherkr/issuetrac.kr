@@ -1,84 +1,84 @@
- <meta charset="UTF-8">
-<html>
+<html ng-app="IssuetrackerApp">
 <head>
-<title>
-이슈트레커
-</title>
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../app.css">
+    <meta charset="UTF-8">
+    <title>
+        이슈트레커
+    </title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../app.css">
 </head>
 
-<body>
+<body ng-controller="CategoryController">
+    <div>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="pull-right">
+                <div class="top menu">
+                    <a href="">Home</a>
+                    <a href="">Log In</a>
+                    <a href="">Log out</a>
+                </div>
+                <input title="search"/>
+                <button type="button" class="btn btn-info">검색</button>
+            </div>
+    </div>
 
-	<div>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-  <div class="pull-right">
-  <div class="top menu">
-    <a href="">Home</a>
-	<a href="">Log In</a>
-	<a href="">Log out</a> 
-	</div>
-<input title="search"/> 
-	<button type="button" class="btn btn-info">검색</button>
-	</div>
-	</div>
-	
-	<container>
-</nav>
-</div>
-	<container>
-<div id="tag cloud">
-<a href="">issues</a>
-</div>
+    <container>
+        </nav>
+    </div>
+    <container>
+    <div id="tag cloud">
+        <a href="">issues</a>
+    </div>
 <tail>
-	<button id="issues plus">
-		+
-	</button>
-	<button type="button" class="btn btn-info">정치</button>
-	<div>
-		같은 이름의 이슈가 있습니다.<P> 그래도 추가하시겠습니까?</p>
-	<button>확인</button>
-	<button>취소</button>
-	</div>
-	
-	<div>
+    <button id="issues plus">
+        +
+    </button>
+    <button type="button" class="btn btn-info">정치</button>
+    <div>
+        같은 이름의 이슈가 있습니다.<P> 그래도 추가하시겠습니까?</p>
+        <button>확인</button>
+        <button>취소</button>
+    </div>
 
- 
-   <div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1"></div>
-  <div class="col-md-1">
-  <div class="btn-group btn-group-sm">
-</div><div class="btn-group">
-   <button type="button" class="btn btn-default">  X </button>
-  </div>
-</div>	
-  </div>
-	<p class="text-center">새로운 이슈 추가</p>
-	
+    <div>
 
-	<ul>
-	<div class="btn-group btn-group-xl">
- 
-  <div class="btn-group">
-    <button type="button" class="btn btn-default"><p class="text-center">+새로운 이슈</p></button>
-  </div>
 
-</div>
-	</ul>
-	</div>
-	
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1">
+            <div class="btn-group btn-group-sm">
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">  X </button>
+            </div>
+        </div>
+    </div>
+    <p class="text-center">새로운 이슈 추가</p>
+
+
+    <ul>
+        <div class="btn-group btn-group-xl">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default"><p class="text-center">+새로운 이슈</p></button>
+            </div>
+        </div>
+    </ul>
+    </div>
+
 </tail>
 </container>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
 </body>
 </html>

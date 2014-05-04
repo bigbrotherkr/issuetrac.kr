@@ -1,14 +1,14 @@
- <meta charset="UTF-8">
-<html>
+<html ng-app="IssuetrackerApp">
 <head>
-<title>
-이슈트래커
-</title>
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../app.css">
+    <meta charset="UTF-8">
+    <title>
+        이슈트래커
+    </title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../app.css">
 </head>
 
-<body>
+<body ng-controller="MainController">
     <header class="nav navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <ul class="nav navbar-nav navbar-right top menu">
@@ -44,5 +44,7 @@
             </div>
         </div>
     </footer>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
 </body>
 </html>
