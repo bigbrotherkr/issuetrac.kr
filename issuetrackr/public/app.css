@@ -1,0 +1,20 @@
+div#title p.text-center{
+	color:white; font-size: 10em; font-variant:small-caps; 
+	
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 1em;
+}
+body{
+	background-color:darkslateblue;
+}
+.menu{
+	color:white;
+}
+#title{
+	position:fixed; top:0; bottom:0; left: 0; right: 0;
+}
