@@ -1,19 +1,19 @@
 {
-  "name": "mean",
-  "description": "MEAN.io: A fullstack javascript platformed powerd by MongoDB, ExpressJS, AngularJS, NodeJS.",
-  "version": "0.3.2",
-  "private": false,
-  "author": "Linnovate <mean@linnovate.net>",
+  "name": "issuetrac.kr",
+  "description": "우리나라에서 특정기사나 이슈들은 한꺼번에 집중보도었다가 시간이 지난후 순식간에 관심이 식는 경우가 많다.",
+  "version": "0.0.1",
+  "private": true,
+  "author": "BigBrother",
   "contributors": [
-    { "name": "Lior Kesos", "mail": "lior@linnovate.net" },
-    { "name": "Yonatan Ellman", "mail": "yonatan@linnovate.net" },
-    { "name": "Ehud Shahak", "mail": "ehud@linnovate.net" },
-    { "name": "Amos Haviv", "mail": "mail@amoshaviv" },
-    { "name": "Drew Fyock", "mail": "drew@steelbisondev.com" }
+    { "name": "Kim Bugeun"},
+    { "name": "Kim Jungbin"},
+    { "name": "Jung Seungjae"},
+    { "name": "Kim Sanghun"},
+    { "name": "Kim Youngjun"}
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/linnovate/mean.git"
+    "url": "https://github.com/bigbrotherkr/issuetrac.kr"
   },
   "engines": {
     "node": "0.10.x",
