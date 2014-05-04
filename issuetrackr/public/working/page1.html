@@ -2,36 +2,45 @@
 <html>
 <head>
 <title>
-이슈트레커
+이슈트래커
 </title>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="/app.css">
 </head>
 
 <body>
-<div class="row">
-<div class="col-md-8"></div>
-  <div class="col-md-4">
-	<div class="top menu">
-	<a href="">Home</a>
-	<a href="">Log In</a>
-	<a href="">Log out</a> 
-	</div>
-	<input title="search"/> 
-	<button type="button" class="btn btn-info">검색</button>
-	</div>
+    <header class="nav navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right top menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Log In</a></li>
+                <li><a href="">Log out</a></li>
+                <li>
+                    <form class="navbar-form">
+                        <div class="form-group">
+                            <input type="search" class="form-control" title="search" />
+                            <button type="button" class="btn btn-info">
+                                <i class="glyphicon glyphicon-search"></i>&nbsp;
+                            </button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
 
-</div>
+    <article class="container">
+        <div id="title">
+            <p class="text-center">이슈트레커</p>
+        </div>
+    </article>
 
-<div id="title">
-<p class="text-center">이슈트레커</p>
-</div>
-
-<tail>
-	
-	<button type="button" class="btn btn-info">정치</button>
-	
-	
-</tail>
+    <footer class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="">정치</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
