@@ -5,11 +5,21 @@
   "private": true,
   "author": "BigBrother",
   "contributors": [
-    { "name": "Kim Bugeun"},
-    { "name": "Kim Jungbin"},
-    { "name": "Jung Seungjae"},
-    { "name": "Kim Sanghun"},
-    { "name": "Kim Youngjun"}
+    {
+      "name": "Kim Bugeun"
+    },
+    {
+      "name": "Kim Jungbin"
+    },
+    {
+      "name": "Jung Seungjae"
+    },
+    {
+      "name": "Kim Sanghun"
+    },
+    {
+      "name": "Kim Youngjun"
+    }
   ],
   "repository": {
     "type": "git",

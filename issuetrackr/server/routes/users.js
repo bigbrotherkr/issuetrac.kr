@@ -10,10 +10,6 @@ module.exports = function(app, passport) {
     app.route('/users/me')
         .get(users.me);
 
-    // Setting up the users api
-    app.route('/register')
-        .post(users.create);
-
     // Setting up the userId param
     app.param('userId', users.user);
 
@@ -43,17 +39,6 @@ module.exports = function(app, passport) {
             failureRedirect: '#!/login'
         }), users.authCallback);
 
-    // Setting the github oauth routes
-    app.route('/auth/github')
-        .get(passport.authenticate('github', {
-            failureRedirect: '#!/login'
-        }), users.signin);
-
-    app.route('/auth/github/callback')
-        .get(passport.authenticate('github', {
-            failureRedirect: '#!/login'
-        }), users.authCallback);
-
     // Setting the twitter oauth routes
     app.route('/auth/twitter')
         .get(passport.authenticate('twitter', {
@@ -77,18 +62,6 @@ module.exports = function(app, passport) {
 
     app.route('/auth/google/callback')
         .get(passport.authenticate('google', {
-            failureRedirect: '#!/login'
-        }), users.authCallback);
-
-    // Setting the linkedin oauth routes
-    app.route('/auth/linkedin')
-        .get(passport.authenticate('linkedin', {
-            failureRedirect: '#!/login',
-            scope: [ 'r_emailaddress' ]
-        }), users.signin);
-
-    app.route('/auth/linkedin/callback')
-        .get(passport.authenticate('linkedin', {
             failureRedirect: '#!/login'
         }), users.authCallback);
 
