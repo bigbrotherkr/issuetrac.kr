@@ -49,6 +49,36 @@ exports.create_issue = function(req, res) {
 };
 
 /**
+ * Create a group
+ */
+ exports.create_group = function(req, res) {
+    var groups = new Groups(req.body);
+
+    groups.save(function(err) {
+        if (err) {
+            return res.render('error', {status: 500});
+        } else {
+            res.jsonp(groups);
+        }
+    });
+};
+
+/**
+ * Create an article
+ */ 
+ exports.create_art = function(req, res) {
+    var article = new Groups(req.body);
+
+    groups.save(function(err) {
+        if (err) {
+            return res.render('error', {status: 500});
+        } else {
+            res.jsonp(groups);
+        }
+    });
+}; 
+
+/**
  * Update an issue
  */
 exports.update = function(req, res) {
@@ -65,7 +95,19 @@ exports.update = function(req, res) {
     });
 };
 
-
+/**
+ * Update a group
+ */
+ exports.update_group = function(req, res) {
+    var issue = req.issue;
+    Groups.findByIdAndUpdate(req.body.id, {'$push':{'comment':req.body}},function(err) {
+        if (err) {
+            return res.render('error', {status: 500});
+        } else {
+            res.jsonp(issue);
+        }
+    });
+    };
 
 /**
  * Show an issue
@@ -73,53 +115,10 @@ exports.update = function(req, res) {
 exports.show_issue = function(req, res) {
     res.jsonp(req.issue);
 };
+
 /**
  * Show a group
  */
 exports.show_group = function(req, res) {
     res.jsonp(req.groups);
 };
-
-/**
- * create a group
- */
- exports.create_group = function(req, res) {
-    var groups = new Groups(req.body);
-
-    groups.save(function(err) {
-        if (err) {
-            return res.render('error', {status: 500});
-        } else {
-            res.jsonp(groups);
-        }
-    });
-	};
-/**
- * create an article
- */ 
- exports.create_art = function(req, res) {
-    var article = new Groups(req.body);
-
-    groups.save(function(err) {
-        if (err) {
-            return res.render('error', {status: 500});
-        } else {
-            res.jsonp(groups);
-        }
-    });
-}; 
-/**
- * Update a group
- */
- exports.update_group = function(req, res) {
-    var issue = req.issue;
-	Groups.findByIdAndUpdate(req.body.id, {'$push':{'comment':req.body}},function(err) {
-        if (err) {
-            return res.render('error', {status: 500});
-        } else {
-            res.jsonp(issue);
-        }
-    });
-	};
- 
- 
