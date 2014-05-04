@@ -2,112 +2,122 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        이슈트레커
+        이슈트래커
     </title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../app.css">
 </head>
 
 <body ng-controller="TimelineController">
-    <div>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <header class="nav navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="pull-right">
-                <div class="top menu">
-                    <a href="">Home</a>
-                    <a href="">Log In</a>
-                    <a href="">Log out</a>
-                </div>
-                <input title="search"/>
-                <button type="button" class="btn btn-info">검색</button>
-            </div>
+            <ul class="nav navbar-nav navbar-right top menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Log In</a></li>
+                <li><a href="">Log out</a></li>
+                <li>
+                    <form class="navbar-form">
+                        <div class="form-group">
+                            <input type="search" class="form-control" title="search" />
+                            <button type="button" class="btn btn-info">
+                                <i class="glyphicon glyphicon-search"></i>&nbsp;
+                            </button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
         </div>
+    </header>
 
-            <container>
-        </nav>
-    </div>
     <article class="container">
         <div>
-            the issues
+            <h3>the issues</h3>
             <span type="button" class="btn btn-default btn-lg">
             <span class="glyphicon glyphicon-th-list"></span>
             </span>
             <div class="dropdown">
                 <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                    Dropdown
+                    메뉴
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">새로운 기사 추가</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">연관 항목 찾기</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">위키에서 검색</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">특정 신문사 선택</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">태그 편집</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">관심 이슈 등록</a></li>
                </ul>
             </div>
         </div>
-        <div id="menu list">
-            <ul> <a href="">새로운 기사 추가</a></ul>
-            <ul> <a href="">연관 항목 찾기 </a></ul>
-        </div>
-        <div class="panel panel-default">
+
+        <div class="panel panel-default" id="addNEWS">
             <div class="panel-body">
-                <div id="add NEWS">
-                    새로운 기사 추가
-                <input title= "URL"/>
-                <span> 확인</span>
-                </div>
+                새로운 기사 추가
+                <br/>
+                <input type= "url" placeholder="http://"/>
+                <br/>
+                <span class="btn btn-success">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    확인
+                </span>
              </div>
         </div>
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="otherRelated">
             <div class="panel-body">
-                <div id="error maybe?">
-                    해당 기사와 다음 기사가 <p> 연관되어 있는 것 같습니다.</p>
-                    <p> 혹시 다음 기사는 아닌가요? </p>
-                    <ul> <a href="">???</a></ul>
-                </div>
+                해당 기사와 다음 기사가 연관되어 있는 것 같습니다.
+                <br/>
+                혹시 다음 기사는 아닌가요?
+                <br/>
+                <ul>
+                    <li><a href="">???</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default" id="inputDate">
+            <div class="panel-body">
+                기사의 날짜를 입력해 주세요
+                <br/>
+                <input type="date"/>
+                <br/>
+                <span class="btn btn-success">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    확인
+                </span>
             </div>
         </div>
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" id= "relatedNEWS">
             <div class="panel-body">
-                <div id="add NEWS date">
-                    기사의 날짜를 입력해 주세요
-                    <input title="date"/>
-                </div>
-                <span> 확인 </span>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div id= "relate NEWS">
-                    이슈와 연관된 항목입니다
-                    <ul> <a href=""> 세월호 세모그룹</a>
-                </div>
+                이슈와 연관된 항목입니다
+                <ul>
+                    <li><a href=""> 세월호 세모그룹</a></li>
+                </ul>
             </div>
         </div>
 
         <div id="chronicle">
             (화살표 연표)
         </div>
-        <div id="TIME LINE">
-        <div class="row">
-            <div class="col-md-1">
+        <div id="TIMELINE">
+            <div class="leftbutton">
+                <span type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </span>
+            </div>
+            <div class="rightbutton">
                 <span type="button" class="btn btn-default btn-lg">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </span>
             </div>
-            <div class="col-md-2"><div class="well"><div id="NEWS-1"></div></div></div>
-            <div class="col-md-2"><div class="well"><div id="NEWS-2"></div></div></div>
-            <div class="col-md-2"><div class="well"><div id="NEWS-3"></div></div></div>
-            <div class="col-md-2"><div class="well"><div id="NEWS-4"></div></div></div>
-            <div class="col-md-2"><div class="well"><div id="NEWS-5"></div></div></div>
-            <div class="col-md-1">
-                <span type="button" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </span>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="well">
+                        <div id="News1"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </article>
