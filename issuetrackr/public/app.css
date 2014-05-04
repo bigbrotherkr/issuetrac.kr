@@ -28,6 +28,10 @@ body{
 	background-color: darkslateblue;
 }
 
+article{
+	background: darkslateblue;
+}
+
 #title{
 	/* for setting title position */
 	position:fixed; top:0; bottom:0; left: 0; right: 0;
