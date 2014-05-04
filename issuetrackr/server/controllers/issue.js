@@ -70,8 +70,14 @@ exports.update = function(req, res) {
 /**
  * Show an issue
  */
-exports.show = function(req, res) {
+exports.show_issue = function(req, res) {
     res.jsonp(req.issue);
+};
+/**
+ * Show a group
+ */
+exports.show_group = function(req, res) {
+    res.jsonp(req.groups);
 };
 
 /**
