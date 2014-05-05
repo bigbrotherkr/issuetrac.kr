@@ -1,0 +1,130 @@
+<html ng-app="IssuetrackerApp">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        이슈트래커
+    </title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../app.css">
+</head>
+
+<body ng-controller="TimelineController">
+    <header class="nav navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-right top menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Log In</a></li>
+                <li><a href="">Log out</a></li>
+                <li>
+                    <form class="navbar-form">
+                        <div class="form-group">
+                            <input type="search" class="form-control" title="search" />
+                            <button type="button" class="btn btn-info">
+                                <i class="glyphicon glyphicon-search"></i>&nbsp;
+                            </button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <article class="container">
+        <div>
+            <h3>{{title}}</h3>
+            <p ng-show="menu">참여자 수 {{participant.length}}</p>
+            <span type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-th-list"></span>
+            </span>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown" ng-click="menuClick()">
+                    메뉴
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">새로운 기사 추가</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">연관 항목 찾기</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">위키에서 검색</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">특정 신문사 선택</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">태그 편집</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">관심 이슈 등록</a></li>
+               </ul>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-show="addNEWS">
+            <div class="panel-body">
+                새로운 기사 추가
+                <br/>
+                <input type= "url" placeholder="http://"/>
+                <br/>
+                <span class="btn btn-success">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    확인
+                </span>
+             </div>
+        </div>
+
+        <div class="panel panel-default" ng-show="otherRelated">
+            <div class="panel-body">
+                해당 기사와 다음 기사가 연관되어 있는 것 같습니다.
+                <br/>
+                혹시 다음 기사는 아닌가요?
+                <br/>
+                <ul>
+                    <li><a href="">???</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-show="inputDate">
+            <div class="panel-body">
+                기사의 날짜를 입력해 주세요
+                <br/>
+                <input type="date"/>
+                <br/>
+                <span class="btn btn-success">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    확인
+                </span>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-show= "relatedNEWS">
+            <div class="panel-body">
+                이슈와 연관된 항목입니다
+                <ul>
+                    <li><a href=""> 세월호 세모그룹</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="chronicle">
+            (화살표 연표)
+        </div>
+        <div id="TIMELINE">
+            <div class="leftbutton">
+                <span type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </span>
+            </div>
+            <div class="rightbutton">
+                <span type="button" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3" ng-repeat="group in issue.groups | limitTo:4">
+                    <div class="well">
+                        <div id="News1">
+                            {{group.article[0].title}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <script src="https://code.angularjs.org/1.2.1/angular.min.js"></script>
+</body>
+
+</html>

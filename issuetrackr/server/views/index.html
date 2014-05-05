@@ -1,8 +1,20 @@
 {% extends 'layouts/default.html' %}
 {% block content %}
-    <section data-ui-view />
+    <div id="title">
+        <p class="text-center">issue tracker</p>
+    </div>
+
+    <footer class="nav navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 item" ng-repeat="category in categories">
+                    {{category}}
+                </div>
+            </div>
+        </div>
+    </footer>
     <script type="text/javascript">
-        window.user = {{user|safe}};        
-        window.modules = {{modules|safe}};      
+        window.user = {{user|safe}};
+        window.modules = {{modules|safe}};
     </script>
 {% endblock %}
