@@ -1,4 +1,4 @@
-<html ng-app="IssuetrackerApp">
+﻿<html ng-app="IssuetrackerApp">
 <head>
     <meta charset="UTF-8">
     <title>
@@ -12,14 +12,14 @@
     <header class="nav navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <ul class="nav navbar-nav navbar-right top menu">
-                <li><a href="">Home</a></li>
-                <li><a href="">Log In</a></li>
-                <li><a href="">Log out</a></li>
+                <li ng-click="home"><a href="">Home</a></li>
+                <li ng-click="login"><a href="">Log In</a></li>
+                <li ng-click="logout"><a href="">Log out</a></li>
                 <li>
                     <form class="navbar-form">
                         <div class="form-group">
-                            <input type="search" class="form-control" title="search" />
-                            <button type="button" class="btn btn-info">
+                            <input type="search" class="form-control" title="search" ng-model="smartboy" />
+                            <button type="button" class="btn btn-info" ng-click="searchnow">
                                 <i class="glyphicon glyphicon-search"></i>&nbsp;
                             </button>
                         </div>
@@ -31,37 +31,50 @@
 
     <article class="container">
         <div id="tagcloud">
-            <a href="">issues</a>
+            <a href="" ng-repeat="issue in issues">{{issue}}</a>
         </div>
 
-        <span class="btn btn-primary" id="issuesplus">
-            &nbsp;
-            <i class="glyphicon glyphicon-plus"></i>
-        </span>
 
-        <span class="btn btn-info">정치</span>
         <div class="panel panel-default">
             <div class="panel-body">
+					<button type="button" class="close" aria-hidden="true" ng-click="exit">&times;</button>
                 같은 이름의 이슈가 있습니다.<P> 그래도 추가하시겠습니까?</p>
-                <button>확인</button>
-                <button>취소</button>
+                <button ng-click="ok">확인</button>
+                <button ng-click="no">취소</button>
             </div>
         </div>
         <div>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <button type="button" class="close" aria-hidden="true" ng-click="exit">&times;</button>
                     <p class="text-center">새로운 이슈 추가</p>
-                    <div id="issuebutton">
-                        <div class="btn-group-vertical">
-                            <button type="button" class="btn btn-default"><p class="text-center">+새로운 이슈</p></button>
-                            <button type="button" class="btn btn-default"><p class="text-center">+Tag</p></button>
+                    <div id="write-in">
+                        <div class="input-group-vertical">
+                            <input type="text" placeholder="+새로운 이슈" ng-model="newissue"></input>
+                            <input type="middle-text" placeholder="+Tag" ng-model="taghere"></input>
+									<button ng-click="ok">확인</button>
+									<button ng-click="no">취소</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </article>
+
+    <footer class="nav navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                	<span class="btn btn-primary" id="issuesplus">
+            &nbsp;
+						<i class="glyphicon glyphicon-plus"></i>
+						</span>
+						<div class="col-md-2 item" ng-repeat="category in categories">
+                    {{category}}
+						</div>
+            </div>
+        </div>
+    </footer>
+	      
     <script src="../bower_components/angular/angular.js"></script>
     <script src="js/controllers.js"></script>
 </body>
